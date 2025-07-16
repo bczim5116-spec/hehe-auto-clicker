@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>heheautoclicker</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>heheautoclicker</h1>
+      <p>A simple auto-clicker utility to automate mouse clicks</p>
+    </header>
+
+    <main>
+      <div class="settings-card">
+        <div class="settings-section">
+          <h3>Click Settings</h3>
+          
+          <div class="form-group">
+            <label for="interval">Click Interval (milliseconds):</label>
+            <input type="number" id="interval" min="1" max="10000" value="100" step="1">
+            <small>Minimum: 1ms, Maximum: 10000ms</small>
+          </div>
+
+          <div class="form-group">
+            <label>Mouse Button:</label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="clickType" value="left" checked>
+                <span class="radio-custom"></span>
+                Left Click
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="clickType" value="middle">
+                <span class="radio-custom"></span>
+                Middle Click
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="clickType" value="right">
+                <span class="radio-custom"></span>
+                Right Click
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="controls-section">
+          <button id="toggleButton" class="toggle-btn">Start Clicking</button>
+          <div class="hotkey-info">
+            <small>Press <kbd>F8</kbd> to toggle start/stop</small>
+          </div>
+        </div>
+
+        <div id="messageArea" class="message-area"></div>
+      </div>
+
+      <div class="info-card">
+        <h4>Instructions:</h4>
+        <ul>
+          <li>Set your desired click interval in milliseconds</li>
+          <li>Choose which mouse button to click</li>
+          <li>Click "Start Clicking" or press F8 to begin</li>
+          <li>The clicker will click at your current mouse position</li>
+          <li>Press F8 or click "Stop Clicking" to stop</li>
+        </ul>
+      </div>
+    </main>
+  </div>
+
+  <script src="renderer.js"></script>
+</body>
+</html>
